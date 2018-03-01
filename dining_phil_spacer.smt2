@@ -6,8 +6,8 @@
 
 (assert (forall ((s Int) (l Int) (r Int)) (=> (and
 		    	    	    	      (= s 2)
-					      (not(= l 2))
-					      (not(= r 1)) )
+					      (or(not(= l 2))
+					      	 (not(= r 1))) )
 					  (bad s l r))))
             
 (assert (forall ((s Int) (l Int) (r Int)) 
@@ -49,6 +49,17 @@
 	(inv 0 0 0)
 	)))
 
+(assert (forall ((s Int) (l Int) (r Int))
+	(=>
+	(inv s 0 r)
+	(inv s 1 r)
+	)))
+
+(assert (forall ((s Int) (l Int) (r Int))
+	(=>
+	(inv s l 0)
+	(inv s l 2)
+	)))
 
 (check-sat)
 (get-model)
