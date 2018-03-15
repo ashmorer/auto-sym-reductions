@@ -1,6 +1,7 @@
+
 (set-option :produce-proofs true)
 (set-logic HORN)
-(declare-fun bad(Int Int Int) Bool)
+(declare-rel bad(Int Int Int))
 (declare-fun init(Int Int Int) Bool)
 (declare-fun inv(Int Int Int) Bool)
 
@@ -61,5 +62,4 @@
 	(inv s l 2)
 	)))
 
-(check-sat)
-(get-model)
+(query bad :print-answer true)
