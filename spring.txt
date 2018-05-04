@@ -1,0 +1,19 @@
+﻿1. Local/Global proofs in Z3, Dafny respectively
+2. Express topology in general for some inputs (collapse Ins/Outs to finite structure)
+3. Generalize structure of local proofs to global proofs 
+4. [buffer]
+5. Observe local vs global proof complexity
+6. More examples for proof complexity (local vs global)
+7. LTL to Buchi conversion
+8. [buffer]
+9. Leader Election locally - how else to express a local proof - is between(x,y,z) relation sufficient to limit structures to rings
+10. Seek leader election resolution - prove can’t be done locally (under some stronger notion of locally) or find local solution
+11. CIVL paper
+12. [buffer]
+13. Seek examples where #quantifiers needed != #equivalence classes
+14. If found, explicate. Else, seek proof that n quantifier-proof exists iff n-equivalence class proof exists
+15. Spin hash compact
+
+
+What remains to be done with Liveness -> Safety paper?
+Synthesis for fun?
