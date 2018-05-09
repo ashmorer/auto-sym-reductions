@@ -2,7 +2,7 @@ method pick(max: int) returns (result: int)
   requires max>0
   ensures 0<=result<max
 {
-  assume false;
+  return 0;
 }
 predicate inv_old(st: int, lfork: int, rfork: int)
 {
