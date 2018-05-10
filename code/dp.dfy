@@ -22,7 +22,7 @@ lemma claim()
 lemma notEqMod(i: int, n: int)
   requires 0<=i<n
   requires n>2
-  ensures forall j:: (0<=j<n && i!=j) ==> (i+1)%n != (j+1)%n;
+  ensures forall j {:trigger (j+1)%n}:: (0<=j<n && i!=j) ==> (i+1)%n != (j+1)%n;
 {
   //assert forall j:: (0<=j<n && i!=j) ==> (i+1)%n!=(j+1)%n;
 }
