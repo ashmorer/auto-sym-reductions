@@ -3,9 +3,6 @@ from z3 import *
 import smtplib
 from email.mime.text import MIMEText
 
-
-email = False
-
 #some vars
 n, i, j = z3.Ints('n i j')
 idd, compId, compId_next = z3.Ints('idd compId compId_next')
@@ -51,28 +48,12 @@ output = ""
 output += result + "\n"
 
 
-# Send the message via our own SMTP server, but don't include the
-# envelope header.
-s = smtplib.SMTP('localhost')
-s.sendmail('ryloashmore@gmail.com', ['ryloashmore@gmail.com'], msg.as_string())
-s.quit()
+
 if str(result)=="unsat":
 	print "Local implies global, no counterexample found"
-	output += "Local implies global!"
 else:
 	print "modelling"
 	print s.model()
 	print "Local does not imply global, counterexample given above"
-	output += "Counterexample found!\n\n"
-	output += str(s.model())
 
 print "goodbye"
-
-if email:
-	msg = MIMEText(output)
-
-	# me == the sender's email address
-	# you == the recipient's email address
-	msg['Subject'] = "Z3 results"
-	msg['From'] = 'ryloashmore@gmail.com'
-	msg['To'] = 'ryloashmore@gmail.com'
